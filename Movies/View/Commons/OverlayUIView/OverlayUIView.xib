@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OverlayUIView" customModule="Movies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="ORl-x8-Tkd">
+                    <rect key="frame" x="146.66666666666666" y="290.66666666666669" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="C7r-R0-hKM"/>
+                        <constraint firstAttribute="height" constant="100" id="n4B-DS-kzf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ha ocurrido un error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yn-Cq-pwf">
+                    <rect key="frame" x="119.66666666666669" y="414.66666666666669" width="154" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLC-5m-vD9">
+                    <rect key="frame" x="122.66666666666669" y="484" width="148" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Volver a intentar"/>
+                    <connections>
+                        <action selector="reloadButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="31q-gi-imW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="XLC-5m-vD9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BDe-JC-rmr"/>
+                <constraint firstItem="XLC-5m-vD9" firstAttribute="top" secondItem="4Yn-Cq-pwf" secondAttribute="bottom" constant="48.333333333333314" id="WJr-DN-djy"/>
+                <constraint firstItem="ORl-x8-Tkd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.8" id="XBx-MI-OdE"/>
+                <constraint firstItem="4Yn-Cq-pwf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pzH-BW-amX"/>
+                <constraint firstItem="4Yn-Cq-pwf" firstAttribute="top" secondItem="ORl-x8-Tkd" secondAttribute="bottom" constant="24" id="vxe-f2-h6K"/>
+                <constraint firstItem="ORl-x8-Tkd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zVB-Ht-Edk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="actionButton" destination="XLC-5m-vD9" id="u6P-RI-uhw"/>
+                <outlet property="imageView" destination="ORl-x8-Tkd" id="nt4-hK-ekj"/>
+                <outlet property="messageLabel" destination="4Yn-Cq-pwf" id="gho-kc-KL3"/>
+            </connections>
+            <point key="canvasLocation" x="127.48091603053435" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="error" width="512" height="512"/>
+    </resources>
+</document>
